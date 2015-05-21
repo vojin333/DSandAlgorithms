@@ -7,6 +7,8 @@ import java.io.InputStreamReader;
 public class TriangleApp {
 
 	public static int theNumber;
+	static long[] a;
+	static int nElemns;
 	/**
 	 * @param args
 	 * @see 
@@ -47,7 +49,7 @@ public class TriangleApp {
 	}
 	
 	public static int factorial(int n) {
-		if (n==0) {
+		if (n == 0) {
 			return 1;
 		} else {
 			return (n * factorial(n - 1));
@@ -63,6 +65,51 @@ public class TriangleApp {
 			int temp =  n + triangleExplained(n - 1);
 			System.out.println("Returning " + temp);
 			return temp;
+		}
+	}
+	
+	public static int binarySearch(long key) {
+		int lowerBound = 0;
+		int upperBound = nElemns - 1;
+		int currIn;
+		
+		while(true) {
+			currIn = (upperBound + lowerBound) / 2;
+			if (a[currIn] == key) {
+				//found a number
+				return currIn;
+			} else if (lowerBound > upperBound){
+				//cant find a number
+				return nElemns;
+			} else {
+				if (a[currIn] > key) {
+					//it is in lower range
+					upperBound = currIn - 1;
+				} else {
+					//it is in higher range
+					lowerBound = currIn + 1;
+				}
+			}
+		}
+	}
+	
+	public static int binarySearchWithRecursion(long key, int lowerBound, int upperBound) {
+		int currIn;
+		currIn = (upperBound + lowerBound) / 2;
+		if (a[currIn] == key) {
+			// found a number
+			return currIn;
+		} else if (lowerBound > upperBound) {
+			// cant find a number
+			return nElemns;
+		} else {
+			if (a[currIn] > key) {
+				// it is in lower range
+				return binarySearchWithRecursion(key, lowerBound, currIn - 1);
+			} else {
+				// it is in higher range
+				return binarySearchWithRecursion(key, currIn + 1, upperBound);
+			}
 		}
 	}
 }
