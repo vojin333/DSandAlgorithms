@@ -94,7 +94,7 @@ public class DoublyLinkedList {
 		while(current != null && value != current.dData) {
 			current = current.next;
 			if (current == null) {
-				return null; //cant find it
+				return null; //can't find it
 			}
 		}
 		

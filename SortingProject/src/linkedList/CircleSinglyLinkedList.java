@@ -37,6 +37,4 @@ public class CircleSinglyLinkedList {
 			current = current.next;
 		}
 	}
-	
-	
 }

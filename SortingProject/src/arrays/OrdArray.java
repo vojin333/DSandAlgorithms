@@ -125,4 +125,30 @@ public class OrdArray {
 		}
 		System.out.println("");
 	}
+	
+	
+//	public void  shellSort() {
+//		int in, out;
+//		long temp;
+//		int h = 1;
+//		while (h <= nElems/3) {
+//			h = h*3 + 1;
+//		} 
+//		
+//		while (h > 0) {
+//			temp = a[out];
+//			
+//		}
+//		for (out = 1; out < nElems; out++) {
+//			temp = a[out];
+//			in=out;
+//			while (in>0 && a[in - 1] >= temp) {
+//				//shift longer 
+//				a[in] = a[in - 1];
+//				--in;
+//			}
+//			//insert temp saved one into right place
+//			a[in] = temp;
+//		}
+//	}
 }
