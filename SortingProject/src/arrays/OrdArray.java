@@ -56,6 +56,11 @@ public class OrdArray {
 		nElems++; // increment size
 	}
 	
+	public void insertRegular(long value) {
+		a[nElems] = value; // insert it
+		nElems++; // increment size
+	}
+	
 	public boolean delete(long value) {
 		int i = find(value);
 		if (i == nElems) {
@@ -151,4 +156,59 @@ public class OrdArray {
 //			a[in] = temp;
 //		}
 //	}
+	
+	public void shellSort() {
+		int inner, outer;
+		long temp;
+
+		int h = 1; // find initial value of h
+		while (h <= nElems / 3) {
+			h = h * 3 + 1; // (1, 4, 13, 40, 121, ...)
+		}
+
+		// decreasing h, until h=1
+		while (h > 0) {
+			// h-sort the file
+			System.out.println("H = " + h);
+			for (outer = h; outer < nElems; outer++) {
+				temp = a[outer];
+				inner = outer;
+				System.out.println("Temp = " + temp + " at position = " + outer);
+				// one subpass (eg 0, 4, 8)
+				while (inner > h - 1 && a[inner - h] >= temp) {
+					System.out.println("Shifted Inner = " + inner + " with value  = " + a[inner - h]);
+					a[inner] = a[inner - h];
+					inner -= h;
+					System.out.println("New Inner = " + inner);
+				}
+				a[inner] = temp;
+			} // end for
+			h = (h - 1) / 3; // decrease h
+			display();
+		} // end while(h>0)
+	}  // end shellSort()
+	
+	
+	public int partitioning(int left, int right, long pivot) {
+		
+		int leftPart = left - 1;
+		int rightPart = right + 1;
+		
+		while (true) {
+			while ( leftPart < right && a[++leftPart] < pivot) {
+				System.out.println("LEft "  + leftPart);
+			}
+			
+			while (rightPart > left && a[--rightPart] > pivot) {
+				System.out.println("RIGHT "  + rightPart);
+			}
+			
+			if (leftPart >= rightPart) {
+				break;
+			} else {
+				swap(leftPart, rightPart);
+			}
+		}
+		return leftPart;
+	}
 }

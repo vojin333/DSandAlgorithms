@@ -62,28 +62,28 @@ public class OrdArrayApp {
 //		} 
 		
 		//Josephus Circle example
-		JosephusCircle theList = new JosephusCircle();
-		
-		theList.insertNextToCurrentWithoutConstruct(1, "Mike");
-		theList.insertNextToCurrentWithoutConstruct(2, "Nina");
-		theList.insertNextToCurrentWithoutConstruct(3, "Marko");
-		theList.insertNextToCurrentWithoutConstruct(4, "Vojin");
-		theList.insertNextToCurrentWithoutConstruct(5, "Dejan");
-		theList.insertNextToCurrentWithoutConstruct(6, "Lazar");
-		theList.insertNextToCurrentWithoutConstruct(8, "Dusan");
-		theList.insertNextToCurrentWithoutConstruct(9, "Mirko");
-		theList.insertNextToCurrentWithoutConstruct(10, "Slavko");
-		theList.insertNextToCurrentWithoutConstruct(11, "Gagi");
-		theList.insertNextToCurrentWithoutConstruct(12, "Zox");
-		
-		theList.displayList();
-		theList.displayCurrent();
-		
-		theList.suicideCircle(1, 3);
-	
-		System.out.println("The left one");
-		theList.displayList();
-		theList.displayCurrent();
+//		JosephusCircle theList = new JosephusCircle();
+//		
+//		theList.insertNextToCurrentWithoutConstruct(1, "Mike");
+//		theList.insertNextToCurrentWithoutConstruct(2, "Nina");
+//		theList.insertNextToCurrentWithoutConstruct(3, "Marko");
+//		theList.insertNextToCurrentWithoutConstruct(4, "Vojin");
+//		theList.insertNextToCurrentWithoutConstruct(5, "Dejan");
+//		theList.insertNextToCurrentWithoutConstruct(6, "Lazar");
+//		theList.insertNextToCurrentWithoutConstruct(8, "Dusan");
+//		theList.insertNextToCurrentWithoutConstruct(9, "Mirko");
+//		theList.insertNextToCurrentWithoutConstruct(10, "Slavko");
+//		theList.insertNextToCurrentWithoutConstruct(11, "Gagi");
+//		theList.insertNextToCurrentWithoutConstruct(12, "Zox");
+//		
+//		theList.displayList();
+//		theList.displayCurrent();
+//		
+//		theList.suicideCircle(1, 3);
+//	
+//		System.out.println("The left one");
+//		theList.displayList();
+//		theList.displayCurrent();
 		
 		
 //		//move current one postion
@@ -107,7 +107,40 @@ public class OrdArrayApp {
 //		toFind.displayPerson();
 		
 		
+		// shell sorting
+//		int maxSize = 10; // array size
+//		OrdArray arr;
+//		arr = new OrdArray(maxSize); // create the array
+//
+//		for (int j = 0; j < maxSize; j++) { // random numbers
+//			long n = (int) (java.lang.Math.random() * 99);
+//			arr.insertRegular(n);
+//		}
+//		arr.display(); // display unsorted array
+//		arr.shellSort(); // shell sort the array
+//		arr.display(); // display sorted array
 
+		int maxSize = 16; // array size
+		OrdArray arr = new OrdArray(maxSize); // create the array
+		
+		for (int j = 0; j < maxSize; j++) { // random numbers
+			long n = (int) (java.lang.Math.random() * 199);
+			arr.insertRegular(n);
+		}
+		
+		long pivot = 20;
+		System.out.println("Pivot is  = " + pivot);
+		arr.display(); // display unsorted array
+		System.out.println();
+		int arrSize = arr.size();
+		
+		int partDex = arr.partitioning(0, arrSize - 1, pivot);
+		
+		System.out.println("Partition is at index " + partDex);
+		
+		arr.display(); // display sorted array
+		
+		
 		
 	}
 
