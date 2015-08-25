@@ -108,48 +108,47 @@ public class OrdArrayApp {
 		
 		
 		// shell sorting
-//		int maxSize = 10; // array size
-//		OrdArray arr;
-//		arr = new OrdArray(maxSize); // create the array
-//
-//		for (int j = 0; j < maxSize; j++) { // random numbers
-//			long n = (int) (java.lang.Math.random() * 99);
-//			arr.insertRegular(n);
-//		}
-//		arr.display(); // display unsorted array
-//		arr.shellSort(); // shell sort the array
-//		arr.display(); // display sorted array
+		int maxSize = 10; // array size
+		OrdArray arr;
+		arr = new OrdArray(maxSize); // create the array
 
-		int maxSize = 16; // array size
-		OrdArray arr = new OrdArray(maxSize); // create the array
-		
 		for (int j = 0; j < maxSize; j++) { // random numbers
-			long n = (int) (java.lang.Math.random() * 199);
+			long n = (int) (java.lang.Math.random() * 99);
 			arr.insertRegular(n);
 		}
-		
-		long pivot = 20;
-		System.out.println("Pivot is  = " + pivot);
 		arr.display(); // display unsorted array
-		System.out.println();
-		int arrSize = arr.size();
-		
-		int partDex = arr.partitioning(0, arrSize - 1, pivot);
-		
-		System.out.println("Partition is at index " + partDex);
-		
+		arr.shellSort(); // shell sort the array
 		arr.display(); // display sorted array
+
+//		int maxSize = 16; // array size
+//		OrdArray arr = new OrdArray(maxSize); // create the array
+//		
+//		for (int j = 0; j < maxSize; j++) { // random numbers
+//			long n = (int) (java.lang.Math.random() * 199);
+//			arr.insertRegular(n);
+//		}
+//		
+//		long pivot = 20;
+//		System.out.println("Pivot is  = " + pivot);
+//		arr.display(); // display unsorted array
+//		System.out.println();
+//		int arrSize = arr.size();
+//		
+//		int partDex = arr.partitioning(0, arrSize - 1, pivot);
+//		
+//		System.out.println("Partition is at index " + partDex);
+//		
+//		arr.display(); // display sorted array
 		
 		
 		
 	}
 
-	public static String getString() throws IOException
-	{
-	InputStreamReader isr = new InputStreamReader(System.in);
-	BufferedReader br = new BufferedReader(isr);
-	String s = br.readLine();
-	return s;
+	public static String getString() throws IOException {
+		InputStreamReader isr = new InputStreamReader(System.in);
+		BufferedReader br = new BufferedReader(isr);
+		String s = br.readLine();
+		return s;
 	}
 	
 }

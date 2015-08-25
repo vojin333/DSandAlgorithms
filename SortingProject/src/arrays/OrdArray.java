@@ -182,27 +182,27 @@ public class OrdArray {
 					System.out.println("New Inner = " + inner);
 				}
 				a[inner] = temp;
+				display();
 			} // end for
 			h = (h - 1) / 3; // decrease h
 			display();
 		} // end while(h>0)
 	}  // end shellSort()
 	
-	
 	public int partitioning(int left, int right, long pivot) {
-		
+
 		int leftPart = left - 1;
 		int rightPart = right + 1;
-		
+
 		while (true) {
-			while ( leftPart < right && a[++leftPart] < pivot) {
-				System.out.println("LEft "  + leftPart);
+			while (leftPart < right && a[++leftPart] < pivot) {
+				System.out.println("Left " + leftPart);
 			}
-			
+
 			while (rightPart > left && a[--rightPart] > pivot) {
-				System.out.println("RIGHT "  + rightPart);
+				System.out.println("Right " + rightPart);
 			}
-			
+
 			if (leftPart >= rightPart) {
 				break;
 			} else {
@@ -211,4 +211,5 @@ public class OrdArray {
 		}
 		return leftPart;
 	}
+
 }
