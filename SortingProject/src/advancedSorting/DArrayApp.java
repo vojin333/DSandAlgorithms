@@ -2,13 +2,7 @@ package advancedSorting;
 
 public class DArrayApp {
 
-	/**
-	 * @param args
-	 * @see 
-	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
 		
 		int max = 16;
 		DArray array = new DArray(max);
