@@ -27,22 +27,57 @@ public class LinkStackApp {
 //		linkStack.displayStack();
 		
 		
-		LinkQueue linkQueue = new LinkQueue();
+//		LinkQueue linkQueue = new LinkQueue();
+//		
+//		linkQueue.insert(10);
+//		linkQueue.insert(20);
+//		linkQueue.insert(30);
+//		linkQueue.insert(40);
+//		linkQueue.displayQueue();
+//		linkQueue.insert(50);
+//		
+//		linkQueue.displayQueue();
+//		
+//		linkQueue.remove();
+//		linkQueue.displayQueue();
+//		
+//		linkQueue.remove();
+//		linkQueue.displayQueue();
 		
-		linkQueue.insert(10);
-		linkQueue.insert(20);
-		linkQueue.insert(30);
-		linkQueue.insert(40);
-		linkQueue.displayQueue();
-		linkQueue.insert(50);
 		
-		linkQueue.displayQueue();
+//		StackUsinQueue stackUsingQueue  = new StackUsinQueue();
+//		stackUsingQueue.push(1);
+//		stackUsingQueue.push(2);
+//		stackUsingQueue.push(3);
+//		stackUsingQueue.push(4);
+//		
+//		stackUsingQueue.displaySTack();
+//		
+//		System.out.println("Poped element = " + stackUsingQueue.pop());
+//		
+//		stackUsingQueue.displaySTack();
+//		
+//		System.out.println("Poped element = " + stackUsingQueue.pop());
+//		
+//		stackUsingQueue.displaySTack();
 		
-		linkQueue.remove();
-		linkQueue.displayQueue();
 		
-		linkQueue.remove();
-		linkQueue.displayQueue();
+		QueueUsinStack queueUsingStack = new QueueUsinStack();
+		queueUsingStack.insert(1);
+		queueUsingStack.insert(2);
+		queueUsingStack.insert(3);
+		queueUsingStack.insert(4);
+		
+		queueUsingStack.displayQueue();
+		
+		System.out.println("Poped element = " + queueUsingStack.delete());
+		
+		queueUsingStack.displayQueue();
+		
+		System.out.println("Poped element = " + queueUsingStack.delete());
+		
+		queueUsingStack.displayQueue();
+		
 	}
 
 }

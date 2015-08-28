@@ -4,10 +4,12 @@ public class LinkListQ {
 
 	private Link first;
 	private Link last;
+	private int size;
 	
 	public LinkListQ() {
 		first = null;
 		last = null;
+		size = 0;
 	}
 	
 	public boolean isEmpty() {
@@ -22,6 +24,8 @@ public class LinkListQ {
 			last.next = newLink;
 		}
 		last = newLink;
+		size++;
+		
 	}
 	
 	public long deleteFirst() {
@@ -31,7 +35,12 @@ public class LinkListQ {
 		} else {
 			first = first.next;
 		}
+		size--;
 		return temp.dData;
+	}
+	
+	public int size() {
+		return size;
 	}
 	
 	public void displayList() {
